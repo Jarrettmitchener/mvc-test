@@ -44,7 +44,7 @@ const SVG = {
 //       ]
 //   });
 // ============================================================
-function initTable(selector, options = {}) {
+function initTable(selector, options = {}, extraButtons = []) {
     // Derive a unique localStorage key from the selector so each
     // table remembers its own search mode preference independently
     const storageKey = `${selector.replace('#', '')}_searchMode`;
@@ -92,6 +92,16 @@ function initTable(selector, options = {}) {
         
         layout: {
             topStart: [
+                ...(extraButtons.length > 0 ? [{
+                    buttons: {
+                        dom: {
+                            button: {
+                                className: 'btn btn-bat-primary'
+                            }
+                        },
+                        buttons: extraButtons
+                    }
+                }] : []),
                 {
                     buttons: {
                         // applies these classes globally
