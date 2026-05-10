@@ -1,0 +1,96 @@
+﻿:root {
+    --bs-purple: #7474b0;
+    --bs-purple-rgb: 116, 116, 176;
+    /* Shade ramp — useful for hover/active states */
+    --bs-purple-100: #ebebf5;
+    --bs-purple-200: #d0d0e8;
+    --bs-purple-300: #b0b0d8;
+    --bs-purple-400: #7474b0; /* base */
+    --bs-purple-500: #4e4e94;
+    --bs-purple-600: #313178;
+    --bs-purple-700: #282865;
+    --bs-purple-800: #1e1e4d;
+    --bs-purple-900: #141435;
+}
+
+/* btn-purple — mirrors how Bootstrap builds btn-danger, btn-success etc */
+.btn-purple {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-purple);
+    --bs-btn-border-color: var(--bs-purple);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #4e4e94;
+    --bs-btn-hover-border-color: #4e4e94;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #313178;
+    --bs-btn-active-border-color: #313178;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-purple);
+    --bs-btn-disabled-border-color: var(--bs-purple);
+    --bs-btn-focus-shadow-rgb: var(--bs-purple-rgb);
+}
+
+/* btn-outline-purple */
+.btn-outline-purple {
+    --bs-btn-color: var(--bs-purple);
+    --bs-btn-border-color: var(--bs-purple);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-purple);
+    --bs-btn-hover-border-color: var(--bs-purple);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-purple);
+    --bs-btn-focus-shadow-rgb: var(--bs-purple-rgb);
+}
+
+/* text-purple, bg-purple, border-purple utility classes */
+.text-purple {
+    color: var(--bs-purple) !important;
+}
+
+.text-purple-emphasis {
+    color: var(--bs-purple-700) !important;
+}
+
+.bg-purple {
+    background-color: var(--bs-purple) !important;
+}
+.bg-purple-dark {
+    background-color: var(--bs-purple-900) !important;
+}
+
+.bg-purple-subtle {
+    background-color: var(--bs-purple-100) !important;
+}
+
+.border-purple {
+    border-color: var(--bs-purple) !important;
+}
+
+.border-purple-subtle {
+    border-color: var(--bs-purple-200) !important;
+}
+
+/* Alert — mirrors Bootstrap's alert-danger etc */
+.alert-purple {
+    --bs-alert-color: var(--bs-purple-700);
+    --bs-alert-bg: var(--bs-purple-100);
+    --bs-alert-border-color: var(--bs-purple-200);
+    --bs-alert-link-color: var(--bs-purple-800);
+}
+
+/* Badge */
+.badge.bg-purple {
+    background-color: var(--bs-purple) !important;
+    color: #fff;
+}
+
+/* Table variant */
+.table-purple {
+    --bs-table-bg: var(--bs-purple-100);
+    --bs-table-striped-bg: var(--bs-purple-200);
+    --bs-table-active-bg: var(--bs-purple-300);
+    --bs-table-hover-bg: var(--bs-purple-200);
+    --bs-table-border-color: var(--bs-purple-200);
+    --bs-table-color: var(--bs-purple-900);
+}

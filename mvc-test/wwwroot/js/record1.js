@@ -1,0 +1,1 @@
+﻿const recordsTable = initTable('#recordsTable');

@@ -1,0 +1,155 @@
+﻿@model IEnumerable<mvc_test.Data.Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    /* fixes the datatables.net css override of table-bordered */
+    table.dataTable.table-bordered th,
+    table.dataTable.table-bordered td {
+        border: var(--bs-border-width) solid var(--bs-border-color) !important;
+    }
+    /* makes larger text boxes add a ... if the content is too large */
+    table.dataTable td {
+        max-width: 400px; 
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* removes the dropdown toggle from JUST the button bar, not child elements */
+    .dt-buttons .buttons-collection.dropdown-toggle::after {
+        display: none;
+    }
+    .btn-bar-light {
+        --bs-btn-color: #fff;
+        --bs-btn-bg: #7474b0;
+        --bs-btn-border-color: #7474b0;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: #63639e; /* ~10% darker */
+        --bs-btn-hover-border-color: #5a5a90;
+        --bs-btn-active-color: #fff;
+        --bs-btn-active-bg: #5a5a90; /* ~15% darker */
+        --bs-btn-active-border-color: #515182;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #7474b0;
+        --bs-btn-disabled-border-color: #7474b0;
+        --bs-btn-focus-shadow-rgb: 116, 116, 176; /* rgb of #7474b0 for focus ring */
+    }
+    .btn-bar {
+        --bs-btn-color: #fff;
+        --bs-btn-bg: #4e4e94;
+        --bs-btn-border-color: #4e4e94;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: #424285; /* ~10% darker */
+        --bs-btn-hover-border-color: #3c3c7a;
+        --bs-btn-active-color: #fff;
+        --bs-btn-active-bg: #3c3c7a; /* ~15% darker */
+        --bs-btn-active-border-color: #35356e;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #4e4e94;
+        --bs-btn-disabled-border-color: #4e4e94;
+        --bs-btn-focus-shadow-rgb: 78, 78, 148; /* rgb of #4e4e94 for focus ring */
+    }
+
+    .btn-bar-dark {
+        --bs-btn-color: #fff;
+        --bs-btn-bg: #313178;
+        --bs-btn-border-color: #313178;
+        --bs-btn-hover-color: #fff;
+        --bs-btn-hover-bg: #28286a; /* ~10% darker */
+        --bs-btn-hover-border-color: #25255f;
+        --bs-btn-active-color: #fff;
+        --bs-btn-active-bg: #25255f; /* ~15% darker */
+        --bs-btn-active-border-color: #202058;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #fff;
+        --bs-btn-disabled-bg: #313178;
+        --bs-btn-disabled-border-color: #313178;
+        --bs-btn-focus-shadow-rgb: 49, 49, 120; /* rgb of #313178 for focus ring */
+    }
+
+
+</style>
+<link href="~/css/custombs.css" rel="stylesheet" />
+
+<h1>Index</h1>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link href="~/lib/datatables/datatables.min.css" rel="stylesheet" />
+<script src="~/lib/datatables/datatables.min.js"></script>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered " id="carTable">
+    <thead class="table-purple">
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            @* <th></th> *@
+        </tr>
+    </thead>
+    <tbody>
+@*     @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+} *@
+    </tbody>
+</table>
+<script src="~/js/dt/basic.js"></script>
+<script>
+    const table = initTable('#carTable',{
+    serverSide: true,
+    ajax: {
+        url: '/Cars/GetCars',
+        type: 'POST'
+    },
+    columns: [
+        { title: 'Actions', data: 'id', render: 
+        function(data){
+            return createBasicEditorButtons(data)
+            }
+        },
+        { name: 'Year', data: 'year' },
+        { name: 'Make', data: 'make' },
+        { name: 'Model',   data: 'model' },
+        { name: 'Active',   data: 'active' },
+        { name: 'Notes',   data: 'notes' },
+    ]
+    });
+</script>
