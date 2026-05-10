@@ -1,6 +1,7 @@
 ﻿:root {
     --bs-purple: #7474b0;
     --bs-purple-rgb: 116, 116, 176;
+    /*generated at tints.dev*/
     /* Shade ramp — useful for hover/active states */
     --bs-purple-100: #ebebf5;
     --bs-purple-200: #d0d0e8;
@@ -11,6 +12,24 @@
     --bs-purple-700: #282865;
     --bs-purple-800: #1e1e4d;
     --bs-purple-900: #141435;
+    --bs-dark-torqouise-100: #bcedff;
+    --bs-dark-torqouise-200: #3bdaff;
+    --bs-dark-torqouise-300: #0ec1e3;
+    --bs-dark-torqouise-400: #0aa7c4;
+    --bs-dark-torqouise-500: #078ba4;
+    --bs-dark-torqouise-600: #046f84;
+    --bs-dark-torqouise-700: #025363;
+    --bs-dark-torqouise-800: #013843;
+    --bs-dark-torqouise-900: #002129;
+    --bs-dark-blue-100: #dbd9ff;
+    --bs-dark-blue-200: #b4b1ff;
+    --bs-dark-blue-300: #918bff;
+    --bs-dark-blue-400: #6d62ff;
+    --bs-dark-blue-500: #4630ff;
+    --bs-dark-blue-600: #2700cb;
+    --bs-dark-blue-700: #150081;
+    --bs-dark-blue-800: #03002e;
+    --bs-dark-blue-900: #02001f;
 }
 .btn-bat-secondary {
     --bs-btn-color: #fff;
@@ -45,6 +64,22 @@
     --bs-btn-disabled-border-color: #4e4e94;
     --bs-btn-focus-shadow-rgb: 78, 78, 148; /* rgb of #4e4e94 for focus ring */
 }
+
+.btn-bat-main {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-purple-700);
+    --bs-btn-border-color: var(--bs-purple-700);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-purple-800);
+    --bs-btn-hover-border-color: var(--bs-purple-900);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-purple-800);
+    --bs-btn-active-border-color: var(--bs-purple-900);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-purple-700);
+    --bs-btn-disabled-border-color: var(--bs-purple-700);
+}
 /* btn-purple — mirrors how Bootstrap builds btn-danger, btn-success etc */
 /*.btn-purple {
     --bs-btn-color: #fff;
@@ -62,6 +97,37 @@
     --bs-btn-disabled-border-color: var(--bs-purple);
     --bs-btn-focus-shadow-rgb: var(--bs-purple-rgb);
 }*/
+.btn-bat-alt {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-dark-torqouise-400);
+    --bs-btn-border-color: var(--bs-dark-torqouise-400);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-dark-torqouise-500);
+    --bs-btn-hover-border-color: var(--bs-dark-torqouise-600);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-dark-torqouise-600);
+    --bs-btn-active-border-color: var(--bs-dark-torqouise-700);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-dark-torqouise-400);
+    --bs-btn-disabled-border-color: var(--bs-dark-torqouise-400);
+}
+
+.btn-bat-optional {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-dark-blue-500);
+    --bs-btn-border-color: var(--bs-dark-blue-500);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-dark-blue-600);
+    --bs-btn-hover-border-color: var(--bs-dark-blue-700);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-dark-blue-700);
+    --bs-btn-active-border-color: var(--bs-dark-blue-800);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-dark-blue-500);
+    --bs-btn-disabled-border-color: var(--bs-dark-blue-500);
+}
 
 /* btn-outline-purple */
 .btn-outline-purple {
@@ -78,6 +144,18 @@
 /* text-purple, bg-purple, border-purple utility classes */
 .text-purple {
     color: var(--bs-purple) !important;
+}
+.text-bat-main {
+    color: var(--bs-purple-700) !important;
+}
+.text-bat-primary {
+    color: var(--bs-purple-500) !important;
+}
+.text-bat-alt {
+    color: var(--bs-dark-torqouise-400) !important;
+}
+.text-bat-optional {
+    color: var(--bs-dark-blue-500) !important;
 }
 
 .text-purple-emphasis {
@@ -117,12 +195,35 @@
     color: #fff;
 }
 
-/* Table variant */
-.table-purple {
+.table-bat-main {
     --bs-table-bg: var(--bs-purple-100);
     --bs-table-striped-bg: var(--bs-purple-200);
     --bs-table-active-bg: var(--bs-purple-300);
     --bs-table-hover-bg: var(--bs-purple-200);
     --bs-table-border-color: var(--bs-purple-200);
     --bs-table-color: var(--bs-purple-900);
+}
+.table-bat-primary {
+    --bs-table-bg: var(--bs-purple-300);
+    --bs-table-striped-bg: var(--bs-purple-400);
+    --bs-table-active-bg: var(--bs-purple-500);
+    --bs-table-hover-bg: var(--bs-purple-400);
+    --bs-table-border-color: var(--bs-purple-400);
+    --bs-table-color: var(--bs-purple-900);
+}
+.table-bat-alt {
+    --bs-table-bg: var(--bs-dark-torqouise-100);
+    --bs-table-striped-bg: var(--bs-dark-torqouise-200);
+    --bs-table-active-bg: var(--bs-dark-torqouise-300);
+    --bs-table-hover-bg: var(--bs-dark-torqouise-200);
+    --bs-table-border-color: var(--bs-dark-torqouise-200);
+    --bs-table-color: var(--bs-dark-torqouise-900);
+}
+.table-bat-optional {
+    --bs-table-bg: var(--bs-dark-blue-300);
+    --bs-table-striped-bg: var(--bs-dark-blue-400);
+    --bs-table-active-bg: var(--bs-dark-blue-500);
+    --bs-table-hover-bg: var(--bs-dark-blue-400);
+    --bs-table-border-color: var(--bs-dark-blue-400);
+    --bs-table-color: var(--bs-dark-blue-900);
 }
