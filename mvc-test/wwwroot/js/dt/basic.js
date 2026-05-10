@@ -6,7 +6,7 @@ const SVG = {
     copy: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-icon lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>',
     colvis: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-columns3-cog-icon lucide-columns-3-cog"><path d="M10.5 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.5"/><path d="m14.3 19.6 1-.4"/><path d="M15 3v7.5"/><path d="m15.2 16.9-.9-.3"/><path d="m16.6 21.7.3-.9"/><path d="m16.8 15.3-.4-1"/><path d="m19.1 15.2.3-.9"/><path d="m19.6 21.7-.4-1"/><path d="m20.7 16.8 1-.4"/><path d="m21.7 19.4-.9-.3"/><path d="M9 3v18"/><circle cx="18" cy="18" r="3"/></svg>',
     createState: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>',
-    reset: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>',
+    reset: '<svg   width="24"   height="24"   viewBox="0 0 24 24"   fill="none"   stroke="currentColor"   stroke-width="2"   stroke-linecap="round"   stroke-linejoin="round"   class="lucide lucide-columns3-cog-icon lucide-columns-3-cog"   version="1.1"   id="svg11"   xmlns="http://www.w3.org/2000/svg"   xmlns:svg="http://www.w3.org/2000/svg">  <defs     id="defs11" />  <path     d="M 10.5,21 H 5 A 2,2 0 0 1 3,19 V 5 A 2,2 0 0 1 5,3 h 14 a 2,2 0 0 1 2,2 v 5.5"     id="path1" />  <path     d="m 15,3 v 7.5"     id="path3" />  <path     d="M 9,3 V 21"     id="path11" />  <path     d="m 13.45775,18.489989 c 0.758884,4.046861 5.428503,4.649966 7.535428,2.410236 2.850489,-3.030162 0.858769,-7.971787 -3.301924,-7.971787 -1.305511,0.0049 -2.558582,0.514319 -3.497209,1.421713 l -1.172654,1.172655"     id="path1-5"     style="stroke-width:2;stroke-dasharray:none" />  <path     d="m 13.021391,12.928438 v 2.594368 h 2.594369"     id="path2"     style="stroke-width:2;stroke-dasharray:none" /></svg>',
     // Shown when in inline mode — clicking will switch TO dropdown
     searchDropdown: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-list"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><path d="M14 4h7"/><path d="M14 9h4"/><path d="M14 15h7"/><path d="M14 20h4"/></svg>',
     // Shown when in dropdown mode — clicking will switch TO inline
@@ -247,7 +247,10 @@ function initTable(selector, options = {}, extraButtons = []) {
                         buttons: [
                             {
                                 text: SVG.info,
-                                titleAttr: 'Table actions, functions, and tutorials'
+                                titleAttr: 'Table actions, functions, and tutorials',
+                                action: function (e, dt, node, config) {
+                                    window.open('/Home/TableExample', '_')
+                                }
                             }
                         ]
                     }
