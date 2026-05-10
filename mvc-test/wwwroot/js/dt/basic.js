@@ -81,13 +81,14 @@ function initTable(selector, options = {}) {
             handler: false
         },
 
-        columnDefs: [
-            {
-                // Hide the last column from exports and column visibility picker
-                targets: -1,
-                className: 'noVis'
-            }
-        ],
+        // Example
+        //columnDefs: [
+        //    {
+        //        // Hide the last column from exports and column visibility picker
+        //        targets: -1,
+        //        className: 'noVis'
+        //    }
+        //],
         
         layout: {
             topStart: [
@@ -96,7 +97,7 @@ function initTable(selector, options = {}) {
                         // applies these classes globally
                         dom: {
                             button: {
-                                className: 'btn btn-bar'
+                                className: 'btn btn-bat-primary'
                             }
                         },
                         buttons: [
@@ -171,7 +172,7 @@ function initTable(selector, options = {}) {
                     buttons: {
                         dom: {
                             button: {
-                                className: 'btn btn-bar'
+                                className: 'btn btn-bat-primary'
                             }
                         },
                         buttons: [

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <script src="~/js/dt/custombuttons.js"></script>
     @* <link rel="stylesheet" href="~/mvc_test.styles.css" asp-append-version="true" /> *@
+    <link href="~/css/custombs.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -21,16 +22,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Cars" asp-action="Index">Cars</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Cars" asp-action="Index">Cars</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="CarRecords" asp-action="Index">Records</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="CarRecords" asp-action="Index">Records</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="TableExample">Example</a>
                         </li>
                     </ul>
                 </div>

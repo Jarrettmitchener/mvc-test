@@ -1,0 +1,38 @@
+﻿/* fixes the datatables.net css override of table-bordered */
+table.dataTable.table-bordered th,
+table.dataTable.table-bordered td {
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+}
+/* makes larger text boxes add a ... if the content is too large */
+table.dataTable td {
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* overides the btn-secondary class of the stateRestore buttons */
+/* css is just copied from btn-bat-primary-dark */
+.dtsr-creation-button.btn-secondary,
+.dtsr-confirmation-button.btn-secondary,
+.btn-bat-primary-dark {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #313178;
+    --bs-btn-border-color: #313178;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #28286a; /* ~10% darker */
+    --bs-btn-hover-border-color: #25255f;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #25255f; /* ~15% darker */
+    --bs-btn-active-border-color: #202058;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #313178;
+    --bs-btn-disabled-border-color: #313178;
+    --bs-btn-focus-shadow-rgb: 49, 49, 120; /* rgb of #313178 for focus ring */
+}
+
+/* removes the dropdown toggle from JUST the button bar, not child elements */
+.dt-buttons .buttons-collection.dropdown-toggle::after {
+    display: none;
+}

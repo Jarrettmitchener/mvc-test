@@ -12,9 +12,41 @@
     --bs-purple-800: #1e1e4d;
     --bs-purple-900: #141435;
 }
+.btn-bat-secondary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #7474b0;
+    --bs-btn-border-color: #7474b0;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #63639e; /* ~10% darker */
+    --bs-btn-hover-border-color: #5a5a90;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #5a5a90; /* ~15% darker */
+    --bs-btn-active-border-color: #515182;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #7474b0;
+    --bs-btn-disabled-border-color: #7474b0;
+    --bs-btn-focus-shadow-rgb: 116, 116, 176; /* rgb of #7474b0 for focus ring */
+}
 
+.btn-bat-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #4e4e94;
+    --bs-btn-border-color: #4e4e94;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #424285; /* ~10% darker */
+    --bs-btn-hover-border-color: #3c3c7a;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #3c3c7a; /* ~15% darker */
+    --bs-btn-active-border-color: #35356e;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #4e4e94;
+    --bs-btn-disabled-border-color: #4e4e94;
+    --bs-btn-focus-shadow-rgb: 78, 78, 148; /* rgb of #4e4e94 for focus ring */
+}
 /* btn-purple — mirrors how Bootstrap builds btn-danger, btn-success etc */
-.btn-purple {
+/*.btn-purple {
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--bs-purple);
     --bs-btn-border-color: var(--bs-purple);
@@ -29,7 +61,7 @@
     --bs-btn-disabled-bg: var(--bs-purple);
     --bs-btn-disabled-border-color: var(--bs-purple);
     --bs-btn-focus-shadow-rgb: var(--bs-purple-rgb);
-}
+}*/
 
 /* btn-outline-purple */
 .btn-outline-purple {
