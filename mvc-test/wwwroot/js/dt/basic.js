@@ -63,6 +63,8 @@ function initTable(selector, options = {}, extraButtons = []) {
         ];
 
     const defaultConfig = {
+        scrollY: '60vh',      // height of the scrollable table body
+        scrollCollapse: true, // shrinks if fewer rows than the height
         columnControl: columnControlConfig,
         responsive: true,
         language: {
@@ -91,12 +93,13 @@ function initTable(selector, options = {}, extraButtons = []) {
         //],
         
         layout: {
-            topStart: [
+            topStart:['search'],
+            topEnd: [
                 ...(extraButtons.length > 0 ? [{
                     buttons: {
                         dom: {
                             button: {
-                                className: 'btn btn-bat-primary'
+                                className: 'btn btn-sm btn-bat-primary'
                             }
                         },
                         buttons: extraButtons
@@ -107,7 +110,7 @@ function initTable(selector, options = {}, extraButtons = []) {
                         // applies these classes globally
                         dom: {
                             button: {
-                                className: 'btn btn-bat-primary'
+                                className: 'btn btn-sm btn-bat-primary'
                             }
                         },
                         buttons: [
@@ -170,6 +173,7 @@ function initTable(selector, options = {}, extraButtons = []) {
                                     const confirmed = confirm('Switching search style will reload the page. Continue?');
                                     if (confirmed) {
                                         localStorage.setItem(storageKey, newMode);
+                                        sessionStorage.setItem('justSwitchedMode', '1');
                                         location.reload();
                                     }
                                 }
@@ -182,7 +186,7 @@ function initTable(selector, options = {}, extraButtons = []) {
                     buttons: {
                         dom: {
                             button: {
-                                className: 'btn btn-bat-primary'
+                                className: 'btn btn-sm btn-bat-primary'
                             }
                         },
                         buttons: [
@@ -241,7 +245,7 @@ function initTable(selector, options = {}, extraButtons = []) {
                     buttons: {
                         dom: {
                             button: {
-                                className: 'btn btn-outline-info'
+                                className: 'btn btn-sm btn-outline-info'
                             }
                         },
                         buttons: [
@@ -254,7 +258,8 @@ function initTable(selector, options = {}, extraButtons = []) {
                             }
                         ]
                     }
-                }
+                },
+                'pageLength'
             ]
         }
     };
@@ -264,5 +269,8 @@ function initTable(selector, options = {}, extraButtons = []) {
     // they are not appended to the defaults.
     const finalConfig = $.extend(true, {}, defaultConfig, options);
 
-    return new DataTable(selector, finalConfig);
+    const table = new DataTable(selector, finalConfig)
+    
+
+    return table;
 }
